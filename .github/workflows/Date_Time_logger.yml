@@ -1,0 +1,12 @@
+name: Generate the Date & Time Log
+on:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Date & Time LOG
+        run: |
+          echo "the D&T LOG is $(date)"
