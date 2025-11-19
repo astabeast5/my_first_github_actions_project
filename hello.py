@@ -4,4 +4,4 @@ def hello():
 
 if __name__ == "__main__":
   result = hello()
-  print(f"Result: {result})
+  print(f"Result: {result}")

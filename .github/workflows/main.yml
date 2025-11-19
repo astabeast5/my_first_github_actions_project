@@ -6,3 +6,31 @@ on:
   pull_request:
     branches: [main]
     
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      #STEP 1 getting the code 
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      #STEP 2 Set up a Python
+      - name: Set up a Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      #STEP 3 Run the python script
+      - name: Run Python Script
+        run: python hello.py
+
+      #STEP 4 Verifying the files exists
+      - name: Check if the file exists
+        run: |
+          if [ -f hello.py ]; then
+            echo "hello.py exists"
+          else
+            echo "hello.py doesn't exists"
+            exit 1
+          fi
