@@ -1,17 +1,8 @@
-name: My First Workflow
-
-on: [push]
-
-jobs:
-  greet:
-    runs-on: ubuntu-latest
+name: Test My Python Code
+#Run when code is pushed on main or pulled
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
     
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Welcome Message
-        run: |
-          echo "🎉 Welcome to GitHub Actions!"
-          echo "📅 Current time: $(date)"
-          echo "📂 Files in repository:"
-          ls -la
