@@ -1,0 +1,12 @@
+name: Checking the file 
+on:
+    push:
+        branches: [main]
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checking the file 
+              uses: actions/checkout@v4
+            - name: Listing the files
+              run:  ls -la
